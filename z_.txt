@@ -1,0 +1,7 @@
+1. npm init >> 설정
+
+2. npm install -s express
+
+3. 자동으로 감지해서 수정해주는 - nodemon 
+        npm install nodemon --g // g는 global 어디서든 사용가능하게끔
+        
