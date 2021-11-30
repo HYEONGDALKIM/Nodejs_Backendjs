@@ -1,5 +1,6 @@
 var express = require('express') 
 var app = express()
+var bodyParser = require('body-parser')
 
 app.listen(3000, function(){
     console.log('Welcome!! exrpess server on port 3000!')
@@ -17,6 +18,11 @@ app.get('/main', function(req,res){ // 비동기처리
     res.sendFile(__dirname + "/public/main.html")
 });
 
-app.get('post')
+// 포스트 방식
+app.post('/email_post', function(req,res){ 
+    //get : req.param('email')
+    res.send("post response")
+});
+
 
 
