@@ -13,7 +13,6 @@ app.set('view engine', 'ejs')
 
 //url routing, Home
 app.get('/', function(req,res){ //asynchronous
-    console.log('test');
     res.sendFile(__dirname + "/public/main.html")
 });
 
