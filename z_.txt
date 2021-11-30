@@ -13,3 +13,7 @@
         get은 params으로 가능 
 
 6. express 페이지 따라해보기
+
+7. ajax
+
+8. 
