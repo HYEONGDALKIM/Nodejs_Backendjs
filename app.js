@@ -1,28 +1,36 @@
 var express = require('express') 
 var app = express()
 var bodyParser = require('body-parser')
-
+// start message
 app.listen(3000, function(){
     console.log('Welcome!! exrpess server on port 3000!')
 });
 
-app.use(express.static('public')) // main.js를 static으로 받음
+app.use(express.static('public')) //static
+app.use(bodyParser.json()) // bodyparser
+app.use(bodyParser.urlencoded({extended:true})); // bodyparser
+app.set('view engine', 'ejs')
 
-//url routing
-app.get('/', function(req,res){ // 비동기처리
+//url routing, Home
+app.get('/', function(req,res){ //asynchronous
     console.log('test');
     res.sendFile(__dirname + "/public/main.html")
 });
 
-app.get('/main', function(req,res){ // 비동기처리
+app.get('/main', function(req,res){ //asynchronous
     res.sendFile(__dirname + "/public/main.html")
 });
 
-// 포스트 방식
+//post method
 app.post('/email_post', function(req,res){ 
     //get : req.param('email')
-    res.send("post response")
+    console.log(req.body.email)
+    // res.send("<h1>Welcome!!!! <br> ID : " + req.body.email + "</h1>")
+    // ejs
+    res.render('email.ejs', {'email': req.body.email})
+
 });
+
 
 
 
