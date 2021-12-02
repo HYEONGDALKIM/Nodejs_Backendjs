@@ -16,6 +16,7 @@ app.get('/', function(req,res){ //asynchronous
     res.sendFile(__dirname + "/public/main.html")
 });
 
+//main page 
 app.get('/main', function(req,res){ //asynchronous
     res.sendFile(__dirname + "/public/main.html")
 });
@@ -30,6 +31,7 @@ app.post('/email_post', function(req,res){
 
 });
 
+//ajax method 
 app.post('/ajax_send_email', function(req, res){
     console.log(req.body.email)
     var responseData = {'result' : 'ok', 'email' : req.body.email}
