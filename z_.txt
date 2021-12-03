@@ -16,4 +16,4 @@
 
 7. ajax
 
-8. 
+8. mysql  >> npm install mysql >> code 추가 
