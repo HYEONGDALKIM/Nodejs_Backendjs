@@ -18,6 +18,7 @@
             var inputdata = document.forms[0].elements[0].value;
             sendAjax('http://127.0.0.1:3000/ajax_send_email', inputdata);
         })
+
         function sendAjax(url, data){
             var data = {'email' : data};
             data = JSON.stringify(data);
@@ -30,9 +31,9 @@
 
             xhr.addEventListener('load', function(){
                var result = JSON.parse(xhr.responseText);
-               var result = document.querySelector(".result");
+               var resultDiv = document.querySelector(".result");
                
-               if(result.result !== "ok") resultDiv.innerHTML = "your email not found"
+               if(result.result !== 'ok') resultDiv.innerHTML = "your email is not found"
                else resultDiv.innerHTML = result.name;
             });
         }

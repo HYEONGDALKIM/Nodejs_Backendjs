@@ -1,10 +1,9 @@
 var express = require('express') 
 var app = express()
 var bodyParser = require('body-parser')
-var mysql = require('mysql')
-// MySQL 접속 정보
+var mysql = require('mysql') // mysql 모듈 가져오기
 
-var Connection = mysql.createConnection({
+var connection = mysql.createConnection({
     host     : 'localhost',
     port     :  3306,
     user     : 'root',
@@ -12,7 +11,7 @@ var Connection = mysql.createConnection({
     database : 'jsman'
   })
 
-  Connection.connect();
+  connection.connect();
 
 // start message
 app.listen(3000, function(){
@@ -51,21 +50,24 @@ app.post('/ajax_send_email', function(req, res){
     // console.log(req.body.email)
     // var responseData = {'result' : 'ok', 'email' : req.body.email}
     // 이메일정보가 실제 db에 있는지 확인하고 email정보가 있다면 main을 포함한 json을 반환
-    var email = req.body.eamil;
+    var email = (req.body.email);
     var responseData = {};
+  
     // 쿼리 날리기 위해 DB접속
 
-    var query = connection.query('select name from user where email="' + email + '"', function(err, rows){
-       
-        if(err) throw err;
-        if(rows[0]) { 
-            responseData.result = "ok";
-            responseData.name = rows[0].name;
-        }else{ 
-            responseData.result = "none";
+    connection.query('select name from user where email="' + email + '"', function (err, rows) {
+        if (err) throw err;
+        // email로 조회해서 받은 경우
+        if(rows[0]) {
+            responseData.result = "ok"; // 성공
+            responseData.name = rows[0].name; // 이름 받기
+        }
+        else {
+            responseData.result = "none"; // 실패
             responseData.name = "";
         }
-        res.json(responseData)
+  
+        res.json(responseData); // 비동기라 이 블록 안에서 줘야 함
     })
-})
+});
 
