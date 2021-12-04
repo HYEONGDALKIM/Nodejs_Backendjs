@@ -29,10 +29,7 @@ course : 윤지수'Node.js
 8. mysql  >> npm install mysql >> code 추가 
 
 9. 라우팅 모듈화, 리팩토링, app.js 단순화
-<<<<<<< HEAD
 
 10. DB 데이터추가  / CRUD
 
 11. 로그인폼 만들고 서버로 보냄, DB연결, POST로 회원가입 
-=======
->>>>>>> ad9fb9d2fa2133a3b6e71821f5982d364dbcb0a2
