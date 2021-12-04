@@ -1,4 +1,5 @@
 # Nodejs_Backendjs
+
 2021-11-16 course : 윤지수'Node.js
 
 1. npm init >> 설정
@@ -22,3 +23,7 @@
 8. mysql  >> npm install mysql >> code 추가 
 
 9. 라우팅 모듈화, 리팩토링, app.js 단순화
+
+10. DB 데이터추가  / CRUD
+
+11. 로그인폼 만들고 서버로 보냄, DB연결, POST로 회원가입 

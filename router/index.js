@@ -4,6 +4,7 @@ var router = express.Router()
 var path = require('path') 
 var main = require('./main/main')
 var email = require('./email/email')
+var join = require('./join/index')
 
 //url routing, Home
 router.get('/', function(req,res){ //asynchronous
@@ -12,5 +13,6 @@ router.get('/', function(req,res){ //asynchronous
 
 router.use('/main', main) // 다른 모듈 사용시 use 사용
 router.use('/email', email)
+router.use('/join', join)
 
 module.exports = router;
