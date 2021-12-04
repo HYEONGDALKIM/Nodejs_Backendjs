@@ -45,6 +45,7 @@ router.post('/ajax', function(req, res){
             responseData.name = "";
         }
         res.json(responseData); // 비동기라 이 블록 안에서 줘야 함
+
     })
 });
 

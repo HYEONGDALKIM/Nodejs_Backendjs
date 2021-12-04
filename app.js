@@ -1,9 +1,7 @@
 var express = require('express') 
 var app = express()
 var bodyParser = require('body-parser')
-var main = require('./router/main')
-var email = require('./router/email')
-
+var router = require('./router/index')
 
 // start message
 app.listen(3000, function(){
@@ -15,10 +13,5 @@ app.use(bodyParser.json()) // bodyparser
 app.use(bodyParser.urlencoded({extended:true})); // bodyparser
 app.set('view engine', 'ejs')
 
-app.use('/main', main)
-app.use('/email', email)
+app.use(router) //path 지정 x
 
-//url routing, Home
-app.get('/', function(req,res){ //asynchronous
-    res.sendFile(__dirname + "/public/main.html")
-});

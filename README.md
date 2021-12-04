@@ -20,3 +20,5 @@
 7. ajax
 
 8. mysql  >> npm install mysql >> code 추가 
+
+9. 라우팅 모듈화, 리팩토링, app.js 단순화
