@@ -12,14 +12,13 @@ var connection = mysql.createConnection({
     password : 'wodo1965~!',
     database : 'jsman'
   })
-
   connection.connect();
 
 router.get('/', function(req,res){ 
-    console.log('get join url');
-   res.sendFile(path.join(__dirname, '../../public/join.html'))
+  console.log('get join url');
+  res.render('join.ejs')
 })
-
+//passport use
 router.post('/', function(req,res){
     var body = req.body;
     var email = body.email;
@@ -28,8 +27,8 @@ router.post('/', function(req,res){
 
     var sql = {email: email, name : name, pw: pwd};
     var query = connection.query('insert into user set ?', sql, function(err,rows){
-        if(err) {throw err;}
-        console.log("ok db insert");
+        if(err) throw err;
+        else res.render('welcome.ejs', {'name': name, 'id':rows.insertId})
     })
 })
 

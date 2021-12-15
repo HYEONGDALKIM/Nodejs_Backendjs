@@ -33,3 +33,9 @@ course : 윤지수'Node.js
 10. DB 데이터추가  / CRUD
 
 11. 로그인폼 만들고 서버로 보냄, DB연결, POST로 회원가입 
+
+12. passport 다운
+        
+        npm install passport passport-local express-session connect-flash --save-dev
+
+                    인증관련, 소셜이아닌 일반로그인처리, 세션관련처리, 에러메세지 리다이렉트 전달 용이
