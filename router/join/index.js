@@ -33,6 +33,8 @@ router.get('/', function(req,res){
 //     })
 // })
 
+
+
 passport.use('local-join', new LocalStrategy({
     usernameField : 'email',
     passwordField: 'password',
