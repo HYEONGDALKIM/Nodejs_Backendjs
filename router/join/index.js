@@ -20,8 +20,10 @@ var connection = mysql.createConnection({
   connection.connect();
 
 router.get('/', function(req,res){ 
-  console.log('get join url');
-  res.render('join.ejs')
+  var msg;
+  var errMsg = req.flash('error')
+  if(errMsg) msg = errMsg;
+  res.render('join.ejs', {'message': msg});
 })
 
 //post >> passport use
@@ -42,8 +44,24 @@ passport.use('local-join', new LocalStrategy({
     passwordField: 'password',
     passReqToCallback : true
 }, function(req, email, password, done){
-    console.log('local-join callback called');
-}
+    var query = connection.query('select *from user where email=?', [email], function(err,rows){
+      if(err) return done(err);
+
+      if(rows.length){
+        console.log('Oh!!! existed user')
+        return done(null, false, {message: 'your email is already used'})
+      }else{
+
+      
+      }
+    })
+  }
 ));
+
+router.post('/', passport.authenticate('local-join', {
+      successRedirect: '/main',
+      failureRedirect: '/join',
+      failureFlash:true })
+)
 
 module.exports = router;

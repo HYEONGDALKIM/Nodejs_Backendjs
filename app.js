@@ -19,10 +19,11 @@ app.use(bodyParser.urlencoded({extended:true})); // bodyparser
 app.set('view engine', 'ejs')
 
 app.use(session({
-    secret: 'keyboard cat',
+    secret: 'keyboard cat', //key value : 다른값이 되어도 상관없음
     resave: false,
     saveUninitialized: true
 }))
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash())
