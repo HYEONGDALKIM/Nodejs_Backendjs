@@ -26,6 +26,7 @@ router.get('/', function(req,res){
   res.render('join.ejs', {'message': msg});
 })
 
+
 //post >> passport use
 // router.post('/', function(req,res){
 //     var body = req.body;
