@@ -22,6 +22,7 @@ var connection = mysql.createConnection({
 router.get('/', function(req,res){ 
   var msg;
   var errMsg = req.flash('error')
+  
   if(errMsg) msg = errMsg;
   res.render('join.ejs', {'message': msg});
 })
