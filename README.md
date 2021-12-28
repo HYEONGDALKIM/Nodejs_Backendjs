@@ -8,7 +8,7 @@
 course : 윤지수'Node.js
 >>>>>>> ad9fb9d2fa2133a3b6e71821f5982d364dbcb0a2
 
-1. npm init >> 설정
+1. npm init >> 설정g
 ?
 2. npm install -s express
 
