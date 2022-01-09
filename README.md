@@ -4,7 +4,7 @@
 
 course : 윤지수'Node.js
 
-1.  npm init >> 설정
+1.  npm init >>> 설정
 
 2.  npm install -s express
 
