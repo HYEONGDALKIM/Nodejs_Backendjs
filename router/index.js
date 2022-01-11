@@ -16,4 +16,7 @@ router.use("/main", main);
 router.use("/email", email);
 router.use("/join", join);
 
+
 module.exports = router;
+
+
