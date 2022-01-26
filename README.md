@@ -33,4 +33,6 @@ course : 윤지수'Node.js
 
         npm install passport passport-local express-session connect-flash --save-dev
 
-                    인증관련, 소셜이아닌 일반로그인처리, 세션관련처리, 에러메세지 리다이렉트 전달이 용이험
+                    인증관련, 소셜이아닌 일반로그인처리, 세션관련처리, 에러메세지 리다이렉트
+
+ 전달이 용이험
