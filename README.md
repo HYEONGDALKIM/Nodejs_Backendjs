@@ -13,6 +13,7 @@ course : 윤지수'Node.js
 4.  app.use(express.static('public'))
     static을 통해 경로 정리를 쉽게 할 수 있음.
 
+
 5.  npm install body-parser --save // body-parser 다운
     post방식은 바디파서가 필요함
     get은 params으로 가능
